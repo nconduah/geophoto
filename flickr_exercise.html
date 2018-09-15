@@ -42,18 +42,20 @@ function init(){
 
   	// get data, add markers and photos to page
 	var data = getFlickrData();
-  	addMarkers();	
+  	addMarkers(data);	
 }
 
 // Adds markers to the map and into array
-function addMarkers(){
+function addMarkers(data){
 
 	// -------------------------------------------------
 	//   YOUR CODE
 	//     Loop through data.
 	//     Add markers to map.
 	// -------------------------------------------------
-
+	data.photos.photo.forEach(function(photo){
+		addMarker(photo);			
+	});
 }
 
 function addMarker(photo){
